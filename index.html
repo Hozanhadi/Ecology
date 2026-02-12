@@ -1,604 +1,0 @@
-<!doctype html>
-<html lang="ar" dir="rtl" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بحث التنوع الحيوي في العالم</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
-  <style>
-    * { font-family: 'Tajawal', sans-serif; }
-    
-    .gradient-bg {
-      background: linear-gradient(135deg, #0d3320 0%, #134e2a 25%, #166534 50%, #15803d 75%, #16a34a 100%);
-    }
-    
-    .section-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .section-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-    }
-    
-    .toc-item {
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .toc-item:hover {
-      background: rgba(22, 163, 74, 0.15);
-      padding-right: 25px;
-    }
-    
-    .icon-circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-    
-    .ecosystem-card {
-      border-radius: 16px;
-      overflow: hidden;
-      transition: all 0.4s ease;
-    }
-    
-    .ecosystem-card:hover {
-      transform: scale(1.03);
-    }
-    
-    .list-item {
-      position: relative;
-      padding-right: 30px;
-    }
-    
-    .list-item::before {
-      content: '🌿';
-      position: absolute;
-      right: 0;
-      top: 2px;
-    }
-    
-    .threat-item::before {
-      content: '⚠️';
-    }
-    
-    .scroll-indicator {
-      animation: bounce 2s infinite;
-    }
-    
-    @keyframes bounce {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-10px); }
-      60% { transform: translateY(-5px); }
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    .animate-section {
-      animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    .level-card {
-      background: linear-gradient(145deg, #f0fdf4, #dcfce7);
-      border-right: 5px solid #16a34a;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 15px;
-    }
-    
-    .student-info-box {
-      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
-      border-right: 5px solid #0284c7;
-      border-radius: 12px;
-      padding: 15px;
-      margin: 10px 0;
-    }
-    
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: #f0fdf4;
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, #16a34a, #15803d);
-      border-radius: 5px;
-    }
-  </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full overflow-auto">
-  <div id="app-container" class="gradient-bg min-h-full w-full"><!-- Header Section -->
-   <header class="text-center py-12 px-4">
-    <div class="animate-section">
-     <div class="text-6xl mb-4">
-      🌍
-     </div>
-     <h1 id="main-title" class="text-4xl md:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">التنوع الحيوي في العالم</h1>
-     <p class="text-xl text-green-100 mb-2">📚 بحث مدرسي شامل</p><!-- Student Info Box -->
-     <div class="max-w-3xl mx-auto bg-white bg-opacity-20 backdrop-blur-md rounded-2xl p-6 mt-6">
-      <div id="student-name-display" class="text-lg text-white font-semibold mb-2"></div>
-      <div id="class-display" class="text-green-100 mb-1"></div>
-      <div id="school-display" class="text-green-100 mb-1"></div>
-      <div id="teacher-display" class="text-green-100"></div>
-     </div>
-     <div class="scroll-indicator text-white text-3xl mt-6">
-      ↓
-     </div>
-    </div>
-   </header><!-- Main Content -->
-   <main class="max-w-5xl mx-auto px-4 pb-12"><!-- Table of Contents -->
-    <section class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-green-100 text-green-700">
-       📑
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">الفهرس</h2>
-     </div>
-     <div class="grid md:grid-cols-2 gap-3">
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('intro')">
-       ١. المقدمة
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('concept')">
-       ٢. مفهوم التنوع الحيوي
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('levels')">
-       ٣. مستويات التنوع الحيوي
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('ecosystems')">
-       ٤. أنواع الأنظمة البيئية
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('importance')">
-       ٥. أهمية التنوع الحيوي
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('threats')">
-       ٦. التهديدات والمخاطر
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('protection')">
-       ٧. جهود الحماية
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('role')">
-       ٨. دور الإنسان والطلاب
-      </div>
-      <div class="toc-item p-3 rounded-lg text-green-700 font-medium" onclick="scrollToSection('conclusion')">
-       ٩. الخاتمة والمراجع
-      </div>
-     </div>
-    </section><!-- Introduction -->
-    <section id="intro" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-emerald-100 text-emerald-700">
-       🌱
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">المقدمة</h2>
-     </div>
-     <div class="text-gray-700 leading-loose text-lg space-y-4">
-      <p>يُعد <strong class="text-green-700">التنوع الحيوي</strong> أحد أهم مقومات الحياة على كوكب الأرض، فهو يعكس غنى الطبيعة بالكائنات الحية المختلفة من نباتات وحيوانات وكائنات دقيقة. ويشمل التنوع الحيوي جميع أشكال الحياة الموجودة في البر والبحر والهواء، إضافة إلى العلاقات المعقدة التي تربط بين الكائنات الحية وبيئاتها.</p>
-      <p>لقد ساهم التنوع الحيوي عبر <strong class="text-green-700">ملايين السنين</strong> في الحفاظ على توازن الأنظمة البيئية واستمرار الحياة، حيث تعتمد عليه جميع الكائنات بما فيها الإنسان في الغذاء والدواء والمياه النظيفة والهواء النقي.</p>
-      <div class="bg-amber-50 border-r-4 border-amber-400 p-4 rounded-lg mt-4">
-       <p class="text-amber-800">⚡ ومع ذلك، فإن العالم اليوم يواجه تحديات كبيرة تهدد هذا التنوع نتيجة النشاطات البشرية المتزايدة والتغيرات البيئية المتسارعة.</p>
-      </div>
-     </div>
-    </section><!-- Concept -->
-    <section id="concept" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-teal-100 text-teal-700">
-       📖
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">مفهوم التنوع الحيوي</h2>
-     </div>
-     <div class="text-gray-700 leading-loose text-lg space-y-4">
-      <p>التنوع الحيوي هو مصطلح علمي يُستخدم لوصف <strong class="text-green-700">تنوع الحياة على الأرض</strong>، ويشمل جميع الكائنات الحية واختلافاتها الجينية والبيئية. ويعني ذلك وجود أنواع متعددة من النباتات والحيوانات والكائنات الدقيقة، إضافة إلى اختلاف البيئات الطبيعية.</p>
-      <div class="grid md:grid-cols-3 gap-4 mt-6">
-       <div class="bg-green-50 p-4 rounded-xl text-center">
-        <div class="text-4xl mb-2">
-         🌲
-        </div>
-        <p class="font-bold text-green-700">الغابات</p>
-       </div>
-       <div class="bg-blue-50 p-4 rounded-xl text-center">
-        <div class="text-4xl mb-2">
-         🏜️
-        </div>
-        <p class="font-bold text-blue-700">الصحارى</p>
-       </div>
-       <div class="bg-cyan-50 p-4 rounded-xl text-center">
-        <div class="text-4xl mb-2">
-         🌊
-        </div>
-        <p class="font-bold text-cyan-700">المحيطات</p>
-       </div>
-      </div>
-      <p class="mt-4">كما يشمل مفهوم التنوع الحيوي <strong class="text-green-700">العلاقات المتبادلة</strong> بين الكائنات الحية، مثل علاقات الافتراس والتكافل والتنافس، والتي تسهم في استقرار الأنظمة البيئية.</p>
-      <div class="bg-green-50 border-r-4 border-green-500 p-4 rounded-lg">
-       <p class="text-green-800">💡 يُعتبر التنوع الحيوي مؤشرًا مهمًا على صحة البيئة؛ فكلما زاد التنوع زادت قدرة النظام البيئي على مقاومة التغيرات والكوارث الطبيعية.</p>
-      </div>
-     </div>
-    </section><!-- Levels -->
-    <section id="levels" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-lime-100 text-lime-700">
-       📊
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">مستويات التنوع الحيوي</h2>
-     </div>
-     <div class="space-y-4">
-      <div class="level-card">
-       <div class="flex items-center gap-3 mb-3"><span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">١</span>
-        <h3 class="text-xl font-bold text-green-800">التنوع الجيني 🧬</h3>
-       </div>
-       <p class="text-gray-700 leading-relaxed">ويقصد به اختلاف الصفات الوراثية داخل النوع الواحد، مثل اختلاف ألوان وأحجام النباتات والحيوانات. ويساعد هذا التنوع الكائنات الحية على التكيف مع التغيرات البيئية ومقاومة الأمراض.</p>
-      </div>
-      <div class="level-card">
-       <div class="flex items-center gap-3 mb-3"><span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">٢</span>
-        <h3 class="text-xl font-bold text-green-800">تنوع الأنواع 🦋</h3>
-       </div>
-       <p class="text-gray-700 leading-relaxed">ويعني وجود أنواع مختلفة من الكائنات الحية داخل منطقة معينة. فمثلًا، تحتوي الغابات الاستوائية على آلاف الأنواع من النباتات والحيوانات، مما يجعلها من أغنى المناطق بالتنوع الحيوي في العالم.</p>
-      </div>
-      <div class="level-card">
-       <div class="flex items-center gap-3 mb-3"><span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">٣</span>
-        <h3 class="text-xl font-bold text-green-800">تنوع النظم البيئية 🌎</h3>
-       </div>
-       <p class="text-gray-700 leading-relaxed">يشير إلى تنوع البيئات الطبيعية مثل الغابات والبحار والصحارى والمناطق الجبلية. ولكل نظام بيئي خصائصه المناخية والحيوية التي تدعم أنواعًا محددة من الكائنات الحية.</p>
-      </div>
-     </div>
-    </section><!-- Ecosystems -->
-    <section id="ecosystems" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-cyan-100 text-cyan-700">
-       🌳
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">أنواع الأنظمة البيئية في العالم</h2>
-     </div>
-     <div class="grid md:grid-cols-1 gap-6">
-      <div class="ecosystem-card bg-gradient-to-l from-green-100 to-emerald-50 p-6">
-       <div class="flex items-start gap-4">
-        <div class="text-5xl">
-         🌳
-        </div>
-        <div>
-         <h3 class="text-xl font-bold text-green-800 mb-2">الغابات الاستوائية</h3>
-         <p class="text-gray-700 leading-relaxed">تُعد الغابات الاستوائية من أغنى مناطق العالم بالتنوع الحيوي، إذ تحتوي على عدد هائل من النباتات والحيوانات والحشرات. تتميز بمناخ دافئ ورطب وأمطار غزيرة طوال العام، مما يخلق بيئة مناسبة لنمو الحياة بكثافة كبيرة. وتلعب هذه الغابات دورًا مهمًا في إنتاج الأكسجين وتنظيم المناخ العالمي.</p>
-        </div>
-       </div>
-      </div>
-      <div class="ecosystem-card bg-gradient-to-l from-blue-100 to-cyan-50 p-6">
-       <div class="flex items-start gap-4">
-        <div class="text-5xl">
-         🐠
-        </div>
-        <div>
-         <h3 class="text-xl font-bold text-blue-800 mb-2">الشعاب المرجانية</h3>
-         <p class="text-gray-700 leading-relaxed">تُعتبر الشعاب المرجانية من أكثر الأنظمة البيئية البحرية تنوعًا، حيث تعيش فيها آلاف الأنواع من الأسماك والكائنات البحرية. وتوفر هذه الشعاب الحماية للسواحل من الأمواج القوية، كما تشكل مصدرًا مهمًا للغذاء والسياحة.</p>
-        </div>
-       </div>
-      </div>
-      <div class="ecosystem-card bg-gradient-to-l from-amber-100 to-orange-50 p-6">
-       <div class="flex items-start gap-4">
-        <div class="text-5xl">
-         🏜️
-        </div>
-        <div>
-         <h3 class="text-xl font-bold text-amber-800 mb-2">الصحارى</h3>
-         <p class="text-gray-700 leading-relaxed">رغم قسوة الظروف المناخية، تحتوي الصحارى على أنواع مميزة من الكائنات الحية التي تكيفت مع الجفاف ودرجات الحرارة المرتفعة. وتشمل هذه الكائنات نباتات مقاومة للجفاف وحيوانات ليلية تقلل فقدان الماء.</p>
-        </div>
-       </div>
-      </div>
-     </div>
-    </section><!-- Importance -->
-    <section id="importance" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-yellow-100 text-yellow-700">
-       ⭐
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">أهمية التنوع الحيوي</h2>
-     </div>
-     <div class="text-gray-700 leading-loose text-lg">
-      <p class="mb-4">للتنوع الحيوي أهمية كبيرة في حياة الإنسان والطبيعة، ومن أبرز فوائده:</p>
-      <div class="grid md:grid-cols-2 gap-4">
-       <div class="list-item bg-green-50 p-4 rounded-lg">
-        الحفاظ على التوازن البيئي واستقرار الأنظمة الطبيعية
-       </div>
-       <div class="list-item bg-green-50 p-4 rounded-lg">
-        توفير الغذاء من النباتات والحيوانات والأسماك
-       </div>
-       <div class="list-item bg-green-50 p-4 rounded-lg">
-        إنتاج الأدوية من مواد طبيعية
-       </div>
-       <div class="list-item bg-green-50 p-4 rounded-lg">
-        تنقية الهواء والماء
-       </div>
-       <div class="list-item bg-green-50 p-4 rounded-lg">
-        دعم الاقتصاد والسياحة البيئية
-       </div>
-       <div class="list-item bg-green-50 p-4 rounded-lg">
-        حماية التربة وتنظيم المناخ
-       </div>
-      </div>
-      <div class="bg-blue-50 border-r-4 border-blue-500 p-4 rounded-lg mt-6">
-       <p class="text-blue-800">🔗 كما يسهم التنوع الحيوي في الحفاظ على <strong>سلاسل الغذاء</strong>، حيث يعتمد كل كائن حي على كائن آخر بشكل مباشر أو غير مباشر.</p>
-      </div>
-     </div>
-    </section><!-- Threats -->
-    <section id="threats" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-red-100 text-red-700">
-       ⚠️
-      </div>
-      <h2 class="text-2xl font-bold text-red-800">التهديدات التي تواجه التنوع الحيوي</h2>
-     </div>
-     <div class="text-gray-700 leading-loose text-lg">
-      <p class="mb-4">يواجه التنوع الحيوي عدة مخاطر جسيمة:</p>
-      <div class="space-y-3">
-       <div class="threat-item list-item bg-red-50 p-4 rounded-lg border-r-4 border-red-400">
-        إزالة الغابات والتوسع العمراني
-       </div>
-       <div class="threat-item list-item bg-red-50 p-4 rounded-lg border-r-4 border-red-400">
-        التلوث البيئي في الهواء والماء والتربة
-       </div>
-       <div class="threat-item list-item bg-red-50 p-4 rounded-lg border-r-4 border-red-400">
-        التغير المناخي وارتفاع درجات الحرارة
-       </div>
-       <div class="threat-item list-item bg-red-50 p-4 rounded-lg border-r-4 border-red-400">
-        الصيد الجائر وانقراض بعض الأنواع
-       </div>
-       <div class="threat-item list-item bg-red-50 p-4 rounded-lg border-r-4 border-red-400">
-        إدخال أنواع غريبة تؤثر على الأنواع المحلية
-       </div>
-      </div>
-      <div class="bg-gray-800 text-white p-4 rounded-lg mt-6">
-       <p>💔 وقد أدت هذه العوامل إلى انخفاض أعداد العديد من الكائنات الحية واختفاء بعض الأنواع نهائيًا.</p>
-      </div>
-     </div>
-    </section><!-- Protection Efforts -->
-    <section id="protection" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-indigo-100 text-indigo-700">
-       🛡️
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">جهود حماية التنوع الحيوي عالميًا</h2>
-     </div>
-     <div class="text-gray-700 leading-loose text-lg space-y-4">
-      <p>تبذل الدول والمنظمات الدولية جهودًا كبيرة لحماية التنوع الحيوي:</p>
-      <div class="grid md:grid-cols-2 gap-4">
-       <div class="bg-indigo-50 p-5 rounded-xl border-r-4 border-indigo-400">
-        <div class="text-3xl mb-2">
-         🏞️
-        </div>
-        <h4 class="font-bold text-indigo-800 mb-2">المحميات الطبيعية والمتنزهات الوطنية</h4>
-        <p class="text-sm">إنشاء مناطق محمية للحفاظ على الأنواع المهددة والنظم البيئية المهمة.</p>
-       </div>
-       <div class="bg-indigo-50 p-5 rounded-xl border-r-4 border-indigo-400">
-        <div class="text-3xl mb-2">
-         📜
-        </div>
-        <h4 class="font-bold text-indigo-800 mb-2">الاتفاقيات البيئية الدولية</h4>
-        <p class="text-sm">توقيع المعاهدات الدولية لحماية الأنواع المهددة والنظم البيئية.</p>
-       </div>
-       <div class="bg-indigo-50 p-5 rounded-xl border-r-4 border-indigo-400">
-        <div class="text-3xl mb-2">
-         🌾
-        </div>
-        <h4 class="font-bold text-indigo-800 mb-2">الزراعة المستدامة</h4>
-        <p class="text-sm">تشجيع الزراعة الصديقة للبيئة وتقليل استخدام المبيدات والأسمدة الكيماوية.</p>
-       </div>
-       <div class="bg-indigo-50 p-5 rounded-xl border-r-4 border-indigo-400">
-        <div class="text-3xl mb-2">
-         🌱
-        </div>
-        <h4 class="font-bold text-indigo-800 mb-2">إعادة تأهيل الغابات</h4>
-        <p class="text-sm">إعادة تأهيل الغابات والأنظمة البيئية المتضررة من النشاطات البشرية.</p>
-       </div>
-       <div class="bg-indigo-50 p-5 rounded-xl border-r-4 border-indigo-400">
-        <div class="text-3xl mb-2">
-         📢
-        </div>
-        <h4 class="font-bold text-indigo-800 mb-2">نشر الوعي البيئي</h4>
-        <p class="text-sm">تنظيم حملات التوعية والندوات التعليمية حول أهمية التنوع الحيوي.</p>
-       </div>
-       <div class="bg-indigo-50 p-5 rounded-xl border-r-4 border-indigo-400">
-        <div class="text-3xl mb-2">
-         🔬
-        </div>
-        <h4 class="font-bold text-indigo-800 mb-2">البحث العلمي</h4>
-        <p class="text-sm">دعم الدراسات والأبحاث العلمية لفهم الأنواع وتطوير طرق الحماية.</p>
-       </div>
-      </div>
-     </div>
-    </section><!-- Human Role -->
-    <section id="role" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-purple-100 text-purple-700">
-       👥
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">دور الإنسان والطلاب في الحفاظ على التنوع الحيوي</h2>
-     </div>
-     <div class="text-gray-700 leading-loose text-lg space-y-4">
-      <p>يمكن لكل فرد المساهمة بشكل فعّال في حماية التنوع الحيوي من خلال تصرفات بسيطة لكن مهمة:</p>
-      <div class="grid md:grid-cols-1 gap-3">
-       <div class="list-item bg-purple-50 p-4 rounded-lg border-r-4 border-purple-400">
-        🌱 زراعة الأشجار والنباتات المحلية والعناية بها
-       </div>
-       <div class="list-item bg-purple-50 p-4 rounded-lg border-r-4 border-purple-400">
-        ♻️ تقليل استخدام البلاستيك وإعادة تدوير النفايات
-       </div>
-       <div class="list-item bg-purple-50 p-4 rounded-lg border-r-4 border-purple-400">
-        🧹 الحفاظ على نظافة البيئة وعدم رمي النفايات
-       </div>
-       <div class="list-item bg-purple-50 p-4 rounded-lg border-r-4 border-purple-400">
-        🛒 دعم المنتجات الصديقة للبيئة والمستدامة
-       </div>
-       <div class="list-item bg-purple-50 p-4 rounded-lg border-r-4 border-purple-400">
-        📚 نشر الوعي البيئي بين الأصدقاء والعائلة
-       </div>
-       <div class="list-item bg-purple-50 p-4 rounded-lg border-r-4 border-purple-400">
-        🐦 احترام الحيوانات والطيور والكائنات الحية
-       </div>
-       <div class="list-item bg-purple-50 p-4 rounded-lg border-r-4 border-purple-400">
-        💧 ترشيد استهلاك المياه والطاقة
-       </div>
-      </div>
-     </div>
-    </section><!-- Conclusion -->
-    <section id="conclusion" class="section-card p-8 mb-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-orange-100 text-orange-700">
-       📝
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">الخاتمة</h2>
-     </div>
-     <div class="text-gray-700 leading-loose text-lg space-y-4">
-      <p>يمثل <strong class="text-green-700">التنوع الحيوي</strong> ثروة طبيعية لا تقدر بثمن، إذ يضمن استمرار الحياة على الأرض ويحافظ على توازن البيئة. ومع تزايد التحديات البيئية والتهديدات التي تواجه النظم البيئية، أصبح من الضروري جدًا أن يتعاون الجميع - الحكومات والمنظمات والأفراد - لحماية الكائنات الحية وبيئاتها الطبيعية.</p>
-      <p>فالمحافظة على التنوع الحيوي ليست مسؤولية الحكومات فقط، بل هي مسؤولية <strong class="text-green-700">مشتركة</strong> لكل فرد يسعى للحفاظ على مستقبل الأجيال القادمة وكوكب صحي ومستدام. وكطلاب، يمكننا أن نلعب دورًا مهمًا في هذه الجهود من خلال الوعي والتعليم والعمل اليومي البسيط.</p>
-      <div class="bg-gradient-to-l from-green-100 to-emerald-50 p-6 rounded-xl mt-6 text-center border-r-4 border-green-500">
-       <p class="text-2xl mb-2">🌍💚</p>
-       <p class="text-green-800 font-bold text-lg">"الأرض لا تنتمي إلينا، بل نحن ننتمي إلى الأرض، فلنحافظ عليها معًا"</p>
-      </div>
-     </div>
-    </section><!-- References -->
-    <section class="section-card p-8 animate-section">
-     <div class="flex items-center gap-4 mb-6">
-      <div class="icon-circle bg-gray-100 text-gray-700">
-       📚
-      </div>
-      <h2 class="text-2xl font-bold text-green-800">المراجع</h2>
-     </div>
-     <div class="text-gray-700 space-y-3">
-      <p class="bg-gray-50 p-4 rounded-lg">📖 برنامج الأمم المتحدة للبيئة UNEP</p>
-      <p class="bg-gray-50 p-4 rounded-lg">📖 الاتحاد الدولي لحفظ الطبيعة IUCN</p>
-      <p class="bg-gray-50 p-4 rounded-lg">📖 الصندوق العالمي للطبيعة WWF</p>
-      <p class="bg-gray-50 p-4 rounded-lg">📖 موسوعة بريتانيكا Britannica</p>
-      <p class="bg-gray-50 p-4 rounded-lg">📖 منظمة اليونسكو UNESCO</p>
-      <p class="bg-gray-50 p-4 rounded-lg">📖 تقارير التنوع الحيوي العالمية</p>
-     </div>
-    </section>
-   </main><!-- Footer -->
-   <footer class="text-center py-8 text-green-100 px-4">
-    <p class="mb-2">📚 بحث مدرسي عن التنوع الحيوي 🌿</p>
-    <div class="text-sm text-green-200">
-     <p>تم إعداد هذا البحث بعناية فائقة</p>
-    </div>
-   </footer>
-  </div>
-  <script>
-    const defaultConfig = {
-      main_title: 'التنوع الحيوي في العالم',
-      student_name: 'هوزن هادي نزار شيخ الغنامة',
-      student_class: '٥/١',
-      school_name: 'ثانوية الأمير عبد المجيد',
-      teacher_name: 'عبدالله الشمراني',
-      primary_color: '#166534',
-      secondary_color: '#f0fdf4',
-      text_color: '#1f2937',
-      accent_color: '#16a34a',
-      card_color: '#ffffff'
-    };
-
-    function scrollToSection(sectionId) {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    }
-
-    async function onConfigChange(config) {
-      const title = document.getElementById('main-title');
-      const studentDisplay = document.getElementById('student-name-display');
-      const classDisplay = document.getElementById('class-display');
-      const schoolDisplay = document.getElementById('school-display');
-      const teacherDisplay = document.getElementById('teacher-display');
-      
-      if (title) {
-        title.textContent = config.main_title || defaultConfig.main_title;
-      }
-      
-      if (studentDisplay) {
-        const studentName = config.student_name || defaultConfig.student_name;
-        studentDisplay.textContent = studentName ? `✍️ ${studentName}` : '';
-      }
-      
-      if (classDisplay) {
-        const className = config.student_class || defaultConfig.student_class;
-        classDisplay.textContent = className ? `📚 الصف: ${className}` : '';
-      }
-      
-      if (schoolDisplay) {
-        const schoolName = config.school_name || defaultConfig.school_name;
-        schoolDisplay.textContent = schoolName ? `🏫 ${schoolName}` : '';
-      }
-      
-      if (teacherDisplay) {
-        const teacherName = config.teacher_name || defaultConfig.teacher_name;
-        teacherDisplay.textContent = teacherName ? `👨‍🏫 المعلم: ${teacherName}` : '';
-      }
-    }
-
-    function mapToCapabilities(config) {
-      return {
-        recolorables: [
-          {
-            get: () => config.primary_color || defaultConfig.primary_color,
-            set: (value) => {
-              config.primary_color = value;
-              window.elementSdk.setConfig({ primary_color: value });
-            }
-          },
-          {
-            get: () => config.accent_color || defaultConfig.accent_color,
-            set: (value) => {
-              config.accent_color = value;
-              window.elementSdk.setConfig({ accent_color: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: undefined,
-        fontSizeable: undefined
-      };
-    }
-
-    function mapToEditPanelValues(config) {
-      return new Map([
-        ['main_title', config.main_title || defaultConfig.main_title],
-        ['student_name', config.student_name || defaultConfig.student_name],
-        ['student_class', config.student_class || defaultConfig.student_class],
-        ['school_name', config.school_name || defaultConfig.school_name],
-        ['teacher_name', config.teacher_name || defaultConfig.teacher_name]
-      ]);
-    }
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9cc9867b61b511a0',t:'MTc3MDg3MjQ1Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
